@@ -22,3 +22,10 @@ jobs:
         run: echo "${{env.MY_ENV}}"
       - name: job_variable
         run: echo "${{env.MY_ENV2}}"
+  build-job:
+    needs: hello
+    runs-on: ubuntu-latest
+  deploy-job:
+    needs: [build-job,hello]
+    runs-on: ubuntu-latest
+    
