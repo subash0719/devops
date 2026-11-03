@@ -8,5 +8,5 @@ jobs:
       - name: Say Hello
         run: echo "Hello, World!"
       - name: variables
-        run: ${{github.ref}}
+        run: echo "${{github.ref}}"
  
