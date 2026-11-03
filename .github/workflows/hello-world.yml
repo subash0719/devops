@@ -25,7 +25,13 @@ jobs:
   build-job:
     needs: hello
     runs-on: ubuntu-latest
+    steps:
+      - name: run a script
+        run: echo "job2 depends on job1"
   deploy-job:
     needs: [build-job,hello]
     runs-on: ubuntu-latest
+    steps:
+      - name: run another script
+        run: echo "job3 depends on job2 and job1"
     
