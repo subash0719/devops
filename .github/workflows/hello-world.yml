@@ -1,12 +1,9 @@
-name: Hello World Workflow
-on: 
-  workflow_dispatch:
+name: Hello node
+on: push
 jobs:
-  say-hello-inline-bash:
+  hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
-        run: echo "Hello, World!"
-      - name: variables
-        run: echo "${{github.ref}}"
- 
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+      - run: npm start
